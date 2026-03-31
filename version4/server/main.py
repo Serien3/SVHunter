@@ -28,6 +28,12 @@ app.include_router(results_router)
 _default_search = os.environ.get("VCF_SEARCH_DIRS", "")
 if _default_search:
     configure_search_paths(_default_search.split(":"))
+else:
+    # Default: look for vcf/ directory next to version4/
+    _repo_vcf = str(
+        __import__("pathlib").Path(__file__).resolve().parent.parent.parent / "vcf"
+    )
+    configure_search_paths([_repo_vcf])
 
 
 @app.get("/api/health")

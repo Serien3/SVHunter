@@ -31,7 +31,7 @@ export default function ResultsPage() {
     if (!selected || useMock) return;
     (async () => {
       try {
-        const [s, v] = await Promise.all([getSampleSummary(selected), getVcfRecords(selected, { limit: 500 })]);
+        const [s, v] = await Promise.all([getSampleSummary(selected, vcfDir || undefined), getVcfRecords(selected, { dir: vcfDir || undefined, limit: 500 })]);
         setSummary(s); setRecords(v.records); setTotalRecords(v.total);
       } catch { setUseMock(true); setSummary(getMockSummary()); const mock = getMockRecords(); setRecords(mock.records); setTotalRecords(mock.total); }
     })();

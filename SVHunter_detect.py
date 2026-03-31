@@ -27,7 +27,7 @@ from sklearn.neighbors import NearestNeighbors
 from scipy.stats import binom
 # %%
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "4"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 #config = tf.compat.v1.ConfigProto()
 #config.gpu_options.per_process_gpu_memory_fraction = 0.2
 #tf.compat.v1.Session(config=config)

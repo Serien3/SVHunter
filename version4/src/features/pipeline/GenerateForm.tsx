@@ -7,8 +7,8 @@ interface Props {
 }
 
 export default function GenerateForm({ onSubmit, disabled }: Props) {
-  const [bamPath, setBamPath] = useState('');
-  const [outputDir, setOutputDir] = useState('');
+  const [bamPath, setBamPath] = useState('/mnt/d/desk/study/大三下/计算机设计/SVHunter-1/HG002_subset_BAM/HG002.subset.bam');
+  const [outputDir, setOutputDir] = useState('/mnt/d/desk/study/大三下/计算机设计/SVHunter-1/datapath');
   const [threads, setThreads] = useState(4);
   const [chromsStr, setChromsStr] = useState('');
 
@@ -45,7 +45,7 @@ export default function GenerateForm({ onSubmit, disabled }: Props) {
             className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-100" />
         </div>
       </div>
-      <button type="submit" disabled={disabled || !bamPath || !outputDir}
+      <button type="submit" disabled={disabled}
         className="w-full py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white disabled:opacity-40 disabled:cursor-not-allowed text-sm font-medium transition-colors">
         开始生成特征数据
       </button>

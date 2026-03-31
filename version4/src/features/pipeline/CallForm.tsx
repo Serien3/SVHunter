@@ -7,11 +7,11 @@ interface Props {
 }
 
 export default function CallForm({ onSubmit, disabled }: Props) {
-  const [modelPath, setModelPath] = useState('./model_predict.h5');
-  const [dataPath, setDataPath] = useState('');
-  const [bamPath, setBamPath] = useState('');
-  const [predictPath, setPredictPath] = useState('');
-  const [vcfOutputPath, setVcfOutputPath] = useState('');
+  const [modelPath, setModelPath] = useState('/mnt/d/desk/study/大三下/计算机设计/SVHunter-1/model_predict.h5');
+  const [dataPath, setDataPath] = useState('/mnt/d/desk/study/大三下/计算机设计/SVHunter-1/datapath');
+  const [bamPath, setBamPath] = useState('/mnt/d/desk/study/大三下/计算机设计/SVHunter-1/HG002_subset_BAM/HG002.subset.bam');
+  const [predictPath, setPredictPath] = useState('/mnt/d/desk/study/大三下/计算机设计/SVHunter-1/predict');
+  const [vcfOutputPath, setVcfOutputPath] = useState('/mnt/d/desk/study/大三下/计算机设计/SVHunter-1/vcf');
   const [threads, setThreads] = useState(4);
   const [gpus, setGpus] = useState(1);
   const [chromsStr, setChromsStr] = useState('');
@@ -64,7 +64,7 @@ export default function CallForm({ onSubmit, disabled }: Props) {
           <input type="text" value={chromsStr} onChange={(e) => setChromsStr(e.target.value)} placeholder="留空=全部" className={inputCls} />
         </div>
       </div>
-      <button type="submit" disabled={disabled || !dataPath || !bamPath || !predictPath || !vcfOutputPath}
+      <button type="submit" disabled={disabled}
         className="w-full py-2.5 rounded-lg bg-violet-600 hover:bg-violet-500 text-white disabled:opacity-40 disabled:cursor-not-allowed text-sm font-medium transition-colors">
         开始 SV 检测
       </button>
