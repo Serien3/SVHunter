@@ -11,7 +11,7 @@ import time
 mode = sys.argv[1]
 print('len',len( sys.argv))
 debug = 0
-os.environ["CUDA_VISIBLE_DEVICES"] = "4"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 #print('-----------------')
 #print(sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6], sys.argv[7], sys.argv[8],sys.argv[9])
 #print('-----------------')

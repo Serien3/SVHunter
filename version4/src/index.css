@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  background-image:
+    linear-gradient(rgba(248, 250, 252, 0.55), rgba(241, 245, 249, 0.60)),
+    url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ── Algorithm page animations ─────────────────────────────────── */
+
+@keyframes particle-flow {
+  0% { offset-distance: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px var(--glow-color, #3b82f6)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 16px var(--glow-color, #3b82f6)); transform: scale(1.05); }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-right {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fill-bar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes scatter-to-cluster {
+  0% { r: 3; }
+  60% { r: 4; }
+  100% { r: 3.5; }
+}
+
+@keyframes channel-fill {
+  from { height: 0; opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+@keyframes network-pulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+@keyframes vote-converge {
+  0% { stroke-dashoffset: 40; opacity: 0; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out both;
+}
+
+.stage-card-body {
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+
+.stage-card-body.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.stage-card-body.expanded {
+  max-height: 500px;
+  opacity: 1;
+}

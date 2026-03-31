@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Data and inference outputs
+datapath/
+predict/
+vcf/
+
+# BAM/sequencing data
+*.bam
+*.bai
+*.cram
+*.crai
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Large model/data files
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
